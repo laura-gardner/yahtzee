@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.roll-dice-div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.dice-div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.75rem;
+}
+
+.die {
+  padding: 0.25rem;
+  color: cornflowerblue;
+}
+
+.die-held {
+  color: rgb(211, 50, 50);
+}
+
+.rolling {
+  animation-name: wobble;
+  animation-duration: 1s;
+}
+
+button {
+  border: none;
+  background-color: rgb(140, 152, 175);
   color: white;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  width: 150px;
+  padding: 0.3rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes wobble {
   from {
-    transform: rotate(0deg);
+      transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+      transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+      transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+      transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+      transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+  75% {
+      transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
   }
   to {
-    transform: rotate(360deg);
+      transform: translate3d(0, 0, 0);
   }
 }
